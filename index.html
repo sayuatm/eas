@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-a-Sketch</title>
+    <script src="grids.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1 class="main-title">
+            Etch-a-Sketch
+        </h1>
+    </header>
+    <main>
+        <div class="panel">    
+            <button class="reset">
+                Reset
+            </button>
+            <button class="save">
+                Save
+            </button>
+            <p id="size-text" style="color: white; margin-bottom: 0;"> Canvas Size: 4</p>
+            <input id="grid-size-slider" type="range" min="1" max="100" value="4">
+        </div>
+        <div class="canvas">
+
+        </div>
+    </main>
+    <footer>
+        <p>this is a footer</p>
+    </footer>
+</div>
+</body>
+</html>
