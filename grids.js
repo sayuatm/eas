@@ -22,7 +22,10 @@ resetBtn.addEventListener('click', () => {
     setGrid();
 });
 
+// TODO: reset shade modes
 colorModeSelector.addEventListener('change', () => {
+    darkenModeSelector.checked = false;
+    lightenModeSelector.checked = false;
     if (!darkenModeSelector.checked && !lightenModeSelector.checked) {
         setColorMode();
     }
@@ -35,15 +38,10 @@ function shade(color, ratio) {
     let paras = color.replace(/[^\d,]/g, '').split(',');
     let shaded = [];
     paras.forEach(para => {
-        // if (Number(para) < 5 && ratio < 0) {
-        //     shaded.push('5');
-        // }
-        // else {
         if (para < 20 && ratio < 0) {
             ratio -= 30;
         }
         shaded.push(Math.round(para * (100 - ratio) / 100));
-        // }
     });
     let newColor = 'rgb(' + shaded.join(',') + ')';
     return newColor;
@@ -56,7 +54,6 @@ function setLightenMode() {
         darkenModeSelector.checked = false;
         grids.forEach(grid => {
             grid.onmouseover = (e) => {
-                // alert(grid.style.backgroundColor);
                 grid.style.backgroundColor = shade(e.target.style.backgroundColor, -5);
             };
         });
@@ -102,6 +99,8 @@ function setColorMode() {
 }
 
 function clearCanvas() {
+    darkenModeSelector.checked = false;
+    lightenModeSelector.checked = false;
     while (canvas.hasChildNodes()) {
         canvas.removeChild(canvas.firstChild);
     }

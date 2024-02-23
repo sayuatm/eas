@@ -46,6 +46,7 @@ button {
     border-color: aliceblue;
     border-radius: 8px;
     min-width: 100px;
+    font-weight: bolder;
 }
 
 .panel {
@@ -123,6 +124,7 @@ button {
     color: rgb(255,255,255);
     font-size: 14px;
     gap:5px;
+    font-weight: bolder;
   }
 
   .mode {
@@ -133,4 +135,8 @@ button {
 
 #grid-size-slider {
     accent-color: rgb(127,255,212);
+}
+
+.size-selector {
+  font-weight: bolder;
 }
